@@ -1,4 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <alert type="success">{{title$ | async | json}}</alert>
+  <alert type="success">{{info$ | async | json}}</alert>
+  <ng-template ngFor let-item [ngForOf]="[2,3,4,5,6,7,8]">
+    <li>
+      {{item}}
+    </li>
+  </ng-template>
 </div>

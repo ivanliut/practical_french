@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule,
     AlertModule.forRoot(),
+    StoreModule.forRoot(reducers, { metaReducers }),
   ],
   providers: [],
   bootstrap: [AppComponent]

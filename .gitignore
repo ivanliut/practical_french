@@ -32,7 +32,7 @@ speed-measure-plugin.json
 /.sass-cache
 /connect.lock
 /coverage
-/libpeerconnection.log
+/libpeerconnection.logs
 npm-debug.log
 yarn-error.log
 testem.log
@@ -41,3 +41,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+./resourcess
