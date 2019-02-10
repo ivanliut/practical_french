@@ -12,21 +12,21 @@ export class AppEffects {
     private actions$: Actions,
     private http: HttpClient,
     private store: Store<any>
-  ) {}
+  ) { }
 
   @Effect()
-exercises$ = this.actions$.pipe(
-      ofType(LOAD_EXERCISES),
-      switchMap(() => {
-        return this.http.get(
-          exercises.url
-        )
+  exercises$ = this.actions$.pipe(
+    ofType(LOAD_EXERCISES),
+    switchMap(() => {
+      return this.http.get(
+        exercises.url
+      )
         .pipe(
           map(res => {
             return new LoadExercisesSuccess(res);
           })
         );
-      })
-);
+    })
+  );
 
 }
