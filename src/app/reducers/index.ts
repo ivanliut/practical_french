@@ -6,13 +6,14 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
+import { exercisesReducer } from './exercises.reducer';
 
 export interface State {
-
+  exercises: any[];
 }
 
 export const reducers: ActionReducerMap<State> = {
-
+  exercises: exercisesReducer
 };
 
 
