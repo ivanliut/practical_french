@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { exercises } from './resources/exercices.paths';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { LoadExercises } from './actions';
+import { selectExercises } from './selectors';
 
 @Component({
     selector: 'app-root',
@@ -24,6 +25,12 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.store.dispatch(new LoadExercises());
+        this.store.pipe(
+            select(selectExercises)
+        )
+        .subscribe(exers => {
+            console.log(`from selector`, exers);
+        });
     }
 
 
